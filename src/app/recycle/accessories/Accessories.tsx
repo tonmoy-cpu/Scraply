@@ -53,7 +53,7 @@ const Accessories: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    fetch("https://elocate-server.onrender.com/api/v1/facility")
+    fetch("http://localhost:5000/api/v1/facility")
       .then((response) => response.json())
       .then((data) => {
         setFacilityData(data);
@@ -157,7 +157,7 @@ const Accessories: React.FC = () => {
       setIsLoading(true)
 
       try {
-        const response = await fetch("https://elocate-server.onrender.com/api/v1/booking", {
+        const response = await fetch("http://localhost:5000/api/v1/booking", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
